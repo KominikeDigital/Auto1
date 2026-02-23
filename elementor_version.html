@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxuryAuto Elementor Export</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0a182e',
+                        accent: '#f27d26',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    </style>
+</head>
+<body class="bg-[#f6f7f8] text-[#141414] antialiased">
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="container mx-auto flex h-20 items-center justify-between px-6 lg:px-12">
+            <div class="flex items-center gap-3">
+                <div class="flex h-10 w-10 items-center justify-center rounded bg-primary text-white">
+                    <i data-lucide="car"></i>
+                </div>
+                <h1 class="text-xl font-bold tracking-tight text-primary uppercase">LuxuryAuto</h1>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-10">
+                <a href="#" class="text-sm font-medium hover:text-primary transition-colors">İlanlar</a>
+                <a href="#" class="text-sm font-medium hover:text-primary transition-colors">Hakkımızda</a>
+                <a href="#" class="text-sm font-medium hover:text-primary transition-colors">İletişim</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <button class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 hover:bg-slate-100 transition-colors">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+                <button class="md:hidden flex h-10 w-10 items-center justify-center">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[600px] h-[80vh] w-full overflow-hidden bg-primary">
+            <div class="absolute inset-0">
+                <img 
+                    src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2070" 
+                    alt="Luxury Sports Car" 
+                    class="h-full w-full object-cover opacity-60"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+            </div>
+            
+            <div class="container relative mx-auto flex h-full items-center px-6 lg:px-12">
+                <div class="max-w-3xl space-y-8">
+                    <div class="space-y-4">
+                        <span class="inline-block rounded bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm">
+                            Seçkin Koleksiyon
+                        </span>
+                        <h2 class="text-4xl font-extrabold leading-[1.1] text-white sm:text-5xl lg:text-7xl">
+                            Hayalinizdeki Araca <br> Hemen Ulaşın
+                        </h2>
+                        <p class="max-w-xl text-base sm:text-lg text-slate-300">
+                            En prestijli markalar ve benzersiz sürüş deneyimleri için doğru adrestesiniz. Konforu ve gücü yeniden keşfedin.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <button class="inline-flex h-12 sm:h-14 items-center justify-center rounded bg-white px-6 sm:px-8 text-sm sm:text-base font-bold text-primary hover:bg-slate-200 transition-all">
+                            İlanları İncele
+                        </button>
+                        <button class="inline-flex h-12 sm:h-14 items-center justify-center rounded border border-white/30 bg-white/5 px-6 sm:px-8 text-sm sm:text-base font-bold text-white backdrop-blur-md hover:bg-white/10 transition-all">
+                            Bize Ulaşın
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 hidden sm:block">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="text-[10px] uppercase tracking-widest">Keşfet</span>
+                    <div class="w-px h-8 bg-gradient-to-b from-white/50 to-transparent animate-bounce"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Listings -->
+        <section class="py-24 bg-[#f6f7f8]">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+                    <div class="space-y-2">
+                        <h3 class="text-3xl font-bold text-primary">Öne Çıkan İlanlar</h3>
+                        <p class="text-slate-600">Haftanın en çok ilgi gören premium modelleri.</p>
+                    </div>
+                    <a href="#" class="group flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-primary">
+                        Tümünü Gör
+                        <i data-lucide="arrow-right" class="w-5 h-5 transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+                    <!-- Porsche -->
+                    <div class="group overflow-hidden rounded-lg bg-white border border-slate-200 transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&q=80&w=800" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-primary/80 rounded px-2 py-1 text-[10px] font-bold text-white backdrop-blur-sm uppercase">0 KM</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-2 flex items-center justify-between">
+                                <span class="text-xs font-semibold uppercase text-slate-500">2023 Porsche</span>
+                                <span class="text-xs font-medium text-slate-400">Elektrik</span>
+                            </div>
+                            <h4 class="mb-4 text-lg font-bold">Porsche Taycan 4S</h4>
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                                <span class="text-xl font-black text-primary">8.500.000 TL</span>
+                                <i data-lucide="heart" class="text-slate-400 hover:text-red-500 cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mercedes -->
+                    <div class="group overflow-hidden rounded-lg bg-white border border-slate-200 transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=800" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-2 flex items-center justify-between">
+                                <span class="text-xs font-semibold uppercase text-slate-500">2022 Mercedes-Benz</span>
+                                <span class="text-xs font-medium text-slate-400">Dizel</span>
+                            </div>
+                            <h4 class="mb-4 text-lg font-bold">S-Class 400d Long</h4>
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                                <span class="text-xl font-black text-primary">7.200.000 TL</span>
+                                <i data-lucide="heart" class="text-slate-400 hover:text-red-500 cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BMW -->
+                    <div class="group overflow-hidden rounded-lg bg-white border border-slate-200 transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&q=80&w=800" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute top-4 left-4 bg-emerald-600 rounded px-2 py-1 text-[10px] font-bold text-white uppercase">Yeni İlan</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-2 flex items-center justify-between">
+                                <span class="text-xs font-semibold uppercase text-slate-500">2023 BMW</span>
+                                <span class="text-xs font-medium text-slate-400">Elektrik</span>
+                            </div>
+                            <h4 class="mb-4 text-lg font-bold">BMW i7 xDrive60</h4>
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                                <span class="text-xl font-black text-primary">7.800.000 TL</span>
+                                <i data-lucide="heart" class="text-slate-400 hover:text-red-500 cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audi -->
+                    <div class="group overflow-hidden rounded-lg bg-white border border-slate-200 transition-all hover:shadow-xl hover:-translate-y-1">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1603584173870-7f3ca970466c?auto=format&fit=crop&q=80&w=800" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <div class="mb-2 flex items-center justify-between">
+                                <span class="text-xs font-semibold uppercase text-slate-500">2021 Audi</span>
+                                <span class="text-xs font-medium text-slate-400">Elektrik</span>
+                            </div>
+                            <h4 class="mb-4 text-lg font-bold">Audi RS e-tron GT</h4>
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-4">
+                                <span class="text-xl font-black text-primary">6.900.000 TL</span>
+                                <i data-lucide="heart" class="text-slate-400 hover:text-red-500 cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="border-y border-slate-200 py-16 bg-white">
+            <div class="container mx-auto px-6 lg:px-12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 text-primary"><i data-lucide="shield-check" class="w-9 h-9"></i></div>
+                        <div class="space-y-2">
+                            <h5 class="text-lg font-bold">Ekspertiz Garantisi</h5>
+                            <p class="text-sm text-slate-600">Tüm araçlarımız şeffaf ekspertiz raporu ve kalite onayıyla sunulur.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 text-primary"><i data-lucide="lock" class="w-9 h-9"></i></div>
+                        <div class="space-y-2">
+                            <h5 class="text-lg font-bold">Güvenli İşlem</h5>
+                            <p class="text-sm text-slate-600">Resmi prosedürler ve güvenli ödeme yöntemleriyle profesyonel hizmet.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 text-primary"><i data-lucide="headset" class="w-9 h-9"></i></div>
+                        <div class="space-y-2">
+                            <h5 class="text-lg font-bold">VIP Danışmanlık</h5>
+                            <p class="text-sm text-slate-600">Satın alma sürecinizin her aşamasında kişiye özel uzman desteği.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-slate-400 pt-20 pb-10">
+        <div class="container mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-8 w-8 items-center justify-center rounded bg-white text-primary">
+                            <i data-lucide="car" class="w-5 h-5"></i>
+                        </div>
+                        <h2 class="text-lg font-bold tracking-tight text-white uppercase">LuxuryAuto</h2>
+                    </div>
+                    <p class="text-sm leading-relaxed">
+                        LuxuryAuto, lüks otomobil segmentinde Türkiye'nin öncü kuruluşlarından biridir. Prestijli araçları en yüksek hizmet kalitesiyle buluşturuyoruz.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-6 lg:ml-auto">
+                    <h3 class="text-white font-bold uppercase tracking-wider text-sm">Hızlı Menü</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Ana Sayfa</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Araç İlanları</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hakkımızda</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Satış Politikamız</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-white font-bold uppercase tracking-wider text-sm">Yasal</h3>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Gizlilik Sözleşmesi</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kullanım Şartları</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Çerez Politikası</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">KVKK Aydınlatma Metni</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-6">
+                    <h3 class="text-white font-bold uppercase tracking-wider text-sm">İletişim</h3>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-4 h-4 mt-1"></i>
+                            <span>Etiler Mah. Nispetiye Cad. No:12 <br> Beşiktaş, İstanbul</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-4 h-4"></i>
+                            <span>+90 (212) 555 00 00</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-4 h-4"></i>
+                            <span>info@luxuryauto.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium uppercase tracking-widest">
+                <p>© 2024 LUXURYAUTO. TÜM HAKLARI SAKLIDIR.</p>
+                <div class="flex items-center gap-2">
+                    <span>İstanbul</span>
+                    <div class="h-1 w-1 rounded-full bg-slate-600"></div>
+                    <span>Londra</span>
+                    <div class="h-1 w-1 rounded-full bg-slate-600"></div>
+                    <span>Dubai</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
