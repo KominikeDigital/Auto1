@@ -2,11 +2,27 @@
 
 Elementor içinde widget olarak kullanılabilen ve Elementor olmadan da shortcode/klasik widget ile çalışan manşet eklentisi.
 
-## Kurulum
+## Kurulum (Hata almamak için)
 
-1. `wordpress/manset-headlines` klasörünü zipleyin.
-2. WordPress panelinde **Eklentiler > Yeni Ekle > Eklenti Yükle** adımıyla zip dosyasını yükleyin.
-3. Eklentiyi etkinleştirin.
+WordPress'in **"Geçerli bir eklenti bulunamadı"** hatası genelde zip içinde klasör seviyesi yanlış olduğunda olur.
+
+### Doğru zip yapısı
+Zip dosyası açıldığında en üstte doğrudan şu klasör görünmelidir:
+
+- `manset-headlines/`
+  - `manset-headlines.php`
+  - `includes/...`
+  - `assets/...`
+
+> `wordpress/manset-headlines/...` şeklinde **ekstra bir üst klasör** kalırsa WordPress eklentiyi algılamaz.
+
+### Hazır paket
+Bu repo içinde hazır kurulum paketi:
+
+- `dist/manset-headlines.zip`
+
+WordPress panelinden:
+- **Eklentiler > Yeni Ekle > Eklenti Yükle > dist/manset-headlines.zip**
 
 ## Kullanım
 
