@@ -1,0 +1,51 @@
+.manset-headlines {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid #eceff3;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.manset-headlines__label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #e2001a;
+  white-space: nowrap;
+}
+
+.manset-headlines__items {
+  position: relative;
+  min-height: 24px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.manset-headlines__item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.35s ease;
+  pointer-events: none;
+}
+
+.manset-headlines__item.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.manset-headlines__item a,
+.manset-headlines__item span {
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.manset-headlines__item a:hover {
+  text-decoration: underline;
+}
