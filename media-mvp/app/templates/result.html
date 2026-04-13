@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dönüştürme Sonucu</title>
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 680px; margin: 2rem auto; padding: 0 1rem; }
+      .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; }
+      a.btn { display: inline-block; padding: 0.7rem 1rem; background: #198754; color: white; border-radius: 8px; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Dönüştürme Tamamlandı</h1>
+    <div class="card">
+      <p>Çıktı formatı: <strong>{{ output_format }}</strong></p>
+      <p>
+        <a class="btn" href="{{ url_for('download', filename=filename) }}">Dosyayı indir</a>
+      </p>
+      <p>
+        <a href="{{ url_for('index') }}">Yeni bir dosya dönüştür</a>
+      </p>
+    </div>
+  </body>
+</html>

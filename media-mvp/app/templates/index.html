@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media MVP Dönüştürücü</title>
+    <style>
+      body { font-family: Arial, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; }
+      .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; }
+      .field { margin-bottom: 1rem; }
+      label { display: block; margin-bottom: 0.4rem; font-weight: 600; }
+      input, select, button { width: 100%; padding: 0.6rem; font-size: 1rem; }
+      button { cursor: pointer; border: 0; border-radius: 8px; background: #0d6efd; color: white; }
+      .flash { padding: 0.7rem; border: 1px solid #f5c2c7; background: #f8d7da; color: #842029; border-radius: 8px; margin-bottom: 1rem; }
+      .muted { color: #666; font-size: 0.92rem; }
+      #url-field { display: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Media MVP</h1>
+    <p class="muted">Yalnızca izinli medya dosyaları için (MP3 / MP4) yerel dönüştürücü.</p>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <div class="card">
+      <form action="{{ url_for('convert') }}" method="post" enctype="multipart/form-data">
+        <div class="field">
+          <label for="source_type">Kaynak tipi</label>
+          <select id="source_type" name="source_type">
+            <option value="upload">Dosya yükle</option>
+            <option value="url">Doğrudan medya URL'si</option>
+          </select>
+        </div>
+
+        <div class="field" id="upload-field">
+          <label for="file">Dosya</label>
+          <input id="file" name="file" type="file" accept=".mp4,.mov,.m4a,.mp3,.wav,.webm,.ogg,.aac" />
+        </div>
+
+        <div class="field" id="url-field">
+          <label for="media_url">Doğrudan medya URL</label>
+          <input id="media_url" name="media_url" type="url" placeholder="https://example.com/file.mp4" />
+        </div>
+
+        <div class="field">
+          <label for="output_format">Çıktı formatı</label>
+          <select id="output_format" name="output_format">
+            <option value="mp3">MP3</option>
+            <option value="mp4">MP4</option>
+          </select>
+        </div>
+
+        <button type="submit">Dönüştür</button>
+      </form>
+    </div>
+
+    <script>
+      const sourceType = document.getElementById('source_type');
+      const uploadField = document.getElementById('upload-field');
+      const urlField = document.getElementById('url-field');
+
+      function toggleSourceFields() {
+        const isUpload = sourceType.value === 'upload';
+        uploadField.style.display = isUpload ? 'block' : 'none';
+        urlField.style.display = isUpload ? 'none' : 'block';
+      }
+
+      sourceType.addEventListener('change', toggleSourceFields);
+      toggleSourceFields();
+    </script>
+  </body>
+</html>
